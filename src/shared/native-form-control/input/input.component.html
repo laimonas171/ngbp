@@ -1,0 +1,23 @@
+<label class="default-label-class"
+       [ngClass]="labelNgClass"
+       [for]="name"
+       *ngIf="label">
+  {{label}}
+</label>
+<input
+  class="default-class"
+  [(ngModel)]="value"
+  [id]="name"
+  [name]="name"
+  [type]="type"
+  [ngClass]="inputNgClass"
+  [attr.placeholder]="placeholder"
+  [attr.maxlength]="maxLength"
+  [attr.aria-describedby]="describedBy"
+  [readonly]="readonly"
+  [required]="required"
+  [autofocus]="autofocus"
+  (change)="onChange()"
+  (keyup)="onChange()"
+  (blur)="onTouched()">
+<ngbp-validation-message [id]="describedBy" [labelText]="label" [control]="formControl"></ngbp-validation-message>

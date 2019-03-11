@@ -1,0 +1,26 @@
+<fieldset>
+  <legend
+    class="default-label-class"
+    [ngClass]="labelNgClass"
+    *ngIf="label">{{label}}</legend>
+
+  <ng-container *ngFor="let option of options; let i = index">
+    <label [for]="getUniqueRadioId(i)" *ngIf="option?.viewValue">
+      {{option?.viewValue}}
+    </label>
+    <input
+      class="default-class"
+      type="radio"
+      [value]="option.value"
+      [id]="getUniqueRadioId(i)"
+      [name]="name"
+      [ngClass]="inputNgClass"
+      [attr.aria-describedby]="describedBy"
+      [readonly]="readonly"
+      [required]="required"
+      [autofocus]="(autofocus && (i === 0))"
+      (change)="onChangeRadio(option.value)"
+      (blur)="onTouched()">
+  </ng-container>
+  <ngbp-validation-message [id]="describedBy" [labelText]="label" [control]="formControl"></ngbp-validation-message>
+</fieldset>

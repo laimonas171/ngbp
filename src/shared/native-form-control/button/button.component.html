@@ -1,0 +1,9 @@
+<span class="button__animation" *ngIf="isAnimated">
+  <ng-container [ngTemplateOutlet]="content"></ng-container>
+</span>
+
+<ng-container [ngIf]="!isAnimated" [ngTemplateOutlet]="content"></ng-container>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

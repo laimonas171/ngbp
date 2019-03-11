@@ -1,0 +1,15 @@
+<select
+  [id]="name"
+  [name]="name"
+  [ngClass]="inputNgClass"
+  [attr.aria-describedby]="describedBy"
+  [required]="required"
+  [formControl]="formControl"
+  [autofocus]="autofocus"
+  (change)="onOptionChange($event.target.value)"
+  (blur)="onTouched()">
+  <option *ngFor="let option of options" [value]="option.value">
+    {{option.viewValue}}
+  </option>
+</select>
+<ngbp-validation-message [id]="describedBy" [labelText]="label" [control]="formControl"></ngbp-validation-message>
