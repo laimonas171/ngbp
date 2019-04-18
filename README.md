@@ -13,6 +13,11 @@ You can also use `ng generate directive|pipe|service|class|guard|interface|enum|
 
 
 ## Help, Useful commands, etc.
+
+Run `npm run hmr` to serve application with Hot Module Reload. (Faster Development Mode)
+
+Run `npm run start` to serve application without Hot Module Reload.
+
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.<br>
 
 Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).<br>
