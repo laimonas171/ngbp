@@ -1,16 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonComponent } from './button.component';
+import { NativeFormControlModule } from '../native-form-control.module';
+import { ButtonComponent } from '@shared/native-form-control/button/button.component';
+import { TemplateRef } from '@angular/core';
+
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
   let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(async(() => {
+
     TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
+      imports: [
+        NativeFormControlModule
+      ],
+      providers: [
+        TemplateRef
+      ],
+      declarations: [ ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

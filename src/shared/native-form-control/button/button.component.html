@@ -2,7 +2,7 @@
   <ng-container [ngTemplateOutlet]="content"></ng-container>
 </span>
 
-<ng-container [ngIf]="!isAnimated" [ngTemplateOutlet]="content"></ng-container>
+<ng-container *ngIf="!isAnimated" [ngTemplateOutlet]="content"></ng-container>
 
 <ng-template #content>
   <ng-content></ng-content>
