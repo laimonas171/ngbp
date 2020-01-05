@@ -1,14 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { NativeFormControlModule } from '../../../../shared/native-form-control/native-form-control.module';
+import { NativeFormControlModule } from '@shared/native-form-control/native-form-control.module';
 import { DemoTempModule } from '../demo-temp.module';
+import { configureTestSuite, createTestContext, TestCtx } from 'ng-bullet';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let testComponentContext: TestCtx<HomeComponent>;
 
-  beforeEach(async(() => {
+  configureTestSuite(() => {
     TestBed.configureTestingModule({
       imports: [
         NativeFormControlModule,
@@ -16,13 +18,14 @@ describe('HomeComponent', () => {
       ],
       declarations: []
     })
-    .compileComponents();
-  }));
+      .compileComponents();
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    testComponentContext = createTestContext(HomeComponent);
+    fixture = testComponentContext.fixture;
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    testComponentContext.detectChanges();
   });
 
   it('should create', () => {
@@ -35,7 +38,7 @@ describe('HomeComponent', () => {
   });
 
   it('should render title in a h1 tag', () => {
-    fixture.detectChanges();
+    testComponentContext.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to Angular Boilerplate!');
   });
