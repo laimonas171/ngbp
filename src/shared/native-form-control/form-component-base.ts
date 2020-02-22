@@ -35,8 +35,8 @@ export class FormComponentBase implements ControlValueAccessor {
 
   // handler for value change, reference to ControlValueAccessor interface
   // tslint:disable-next-line:no-any
-  protected propagateChange = (value: any) => {};
-  protected onTouched = () => {};
+  propagateChange = (value: any) => {};
+  onTouched = () => {};
 
   // reference to ControlValueAccessor interface
   // tslint:disable-next-line:no-any
