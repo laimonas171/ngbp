@@ -14,7 +14,7 @@ You can also use `ng generate directive|pipe|service|class|guard|interface|enum|
 
 ## Help, Useful commands, etc.
 
-Run `npm run hmr` to serve application with Hot Module Reload. (Faster Development Mode)
+~~Run `npm run hmr` to serve application with Hot Module Reload. (Faster Development Mode)~~
 
 Run `npm run start` to serve application without Hot Module Reload.
 

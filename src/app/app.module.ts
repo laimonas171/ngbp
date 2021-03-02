@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { FormBuilder, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoTempModule } from './modules/demo/demo-temp.module';
-import { NativeFormControlModule } from '../shared/native-form-control/native-form-control.module';
-import { GlobalComponentsModule } from '../shared/global-components/global-components.module';
 
 @NgModule({
   declarations: [
@@ -14,16 +10,9 @@ import { GlobalComponentsModule } from '../shared/global-components/global-compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    DemoTempModule,
-    NativeFormControlModule,
-    GlobalComponentsModule,
-    FormsModule
+    AppRoutingModule
   ],
-  providers: [
-    Title,
-    FormBuilder
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
