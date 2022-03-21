@@ -1,7 +1,11 @@
 {
   "version": 2,
   "projects": {
-    "tubleweed": "apps/tubleweed",
-    "tubleweed-e2e": "apps/tubleweed-e2e"
+    "tumbleweed": {
+      "projectType": "application",
+      "root": "apps/tumbleweed",
+      "sourceRoot": "apps/tumbleweed/src",
+      "prefix": ""
+    }
   }
 }
