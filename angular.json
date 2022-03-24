@@ -119,6 +119,32 @@
       },
       "tags": [],
       "implicitDependencies": ["blank"]
+    },
+    "util-dev-feature": {
+      "projectType": "library",
+      "root": "libs/util/dev-feature",
+      "sourceRoot": "libs/util/dev-feature/src",
+      "prefix": "ngbp",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util/dev-feature"],
+          "options": {
+            "jestConfig": "libs/util/dev-feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util/dev-feature/src/**/*.ts",
+              "libs/util/dev-feature/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["util"]
     }
   }
 }
