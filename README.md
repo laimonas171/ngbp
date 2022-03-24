@@ -16,6 +16,18 @@ This project was generated using [Nx](https://nx.dev).
 
 [Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
 
+## Workspace setup
+- Run `npm install` inside `ngbp` directory to install node packages.
+
+## Commonly used commands
+- `ng g @nrwl/angular:app [app-name]` creates Angular application.
+- `ng g @nrwl/angular:lib [lib-name]` creates Angular Module as a library.
+- `ng g c [component-name] --project=[project-name]` creates Angular Component for specified module. 
+- `npm run build` builds default application and place transpiled files into `dist` folder.
+- `nx build [project]` builds selected application and place transpiled files into `dist` folder.
+- `npm run start` starts node server and host default angular application on `localhost:4200` port.
+- `nx serve [project]` starts node server and host selected angular application on `localhost:4200` port..
+
 ## Adding capabilities to your workspace
 
 Nx supports many plugins which add capabilities for developing different types of applications and different tools.
