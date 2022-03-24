@@ -1,11 +1,124 @@
 {
   "version": 2,
   "projects": {
-    "tumbleweed": {
+    "blank": {
       "projectType": "application",
-      "root": "apps/tumbleweed",
-      "sourceRoot": "apps/tumbleweed/src",
-      "prefix": ""
+      "root": "apps/blank",
+      "sourceRoot": "apps/blank/src",
+      "prefix": "ngbp",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/blank",
+            "index": "apps/blank/src/index.html",
+            "main": "apps/blank/src/main.ts",
+            "polyfills": "apps/blank/src/polyfills.ts",
+            "tsConfig": "apps/blank/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/blank/src/favicon.ico", "apps/blank/src/assets"],
+            "styles": ["apps/blank/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/blank/src/environments/environment.ts",
+                  "with": "apps/blank/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "blank:build:production"
+            },
+            "development": {
+              "browserTarget": "blank:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "blank:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/blank/src/**/*.ts",
+              "apps/blank/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/blank"],
+          "options": {
+            "jestConfig": "apps/blank/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "blank-e2e": {
+      "root": "apps/blank-e2e",
+      "sourceRoot": "apps/blank-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/blank-e2e/cypress.json",
+            "devServerTarget": "blank:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "blank:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/blank-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["blank"]
     }
   }
 }

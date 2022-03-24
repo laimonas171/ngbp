@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "strictPropertyInitialization": true,
     "noImplicitAny": true,
-    "paths": {},
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
