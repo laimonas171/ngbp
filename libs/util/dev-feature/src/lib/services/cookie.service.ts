@@ -10,13 +10,21 @@ export class CookieService {
   get(name: string): string | null {
     const cookieRegExp = CookieService.getCookieRegExp(name);
     const cookieResult = cookieRegExp.exec(this.document.cookie);
-    console.log(cookieResult);
 
     if (cookieResult) {
       return CookieService.decode(cookieResult[1]);
     }
 
     return null;
+  }
+
+  set(name: string, value: string, expiresDays: number = 14) {
+    let endDate: Date = new Date();
+    endDate.setDate(endDate.getDate() + expiresDays);
+
+    document.cookie = `${name}=${CookieService.encode(
+      value
+    )};expires=${endDate.toUTCString()}`;
   }
 
   private static getCookieRegExp(name: string): RegExp {
@@ -29,6 +37,14 @@ export class CookieService {
       '(?:^' + escapedName + '|;\\s*' + escapedName + ')=(.*?)(?:;|$)',
       'g'
     );
+  }
+
+  private static encode(val: string): string {
+    try {
+      return encodeURIComponent(val);
+    } catch {
+      return val;
+    }
   }
 
   private static decode(val: string): string {

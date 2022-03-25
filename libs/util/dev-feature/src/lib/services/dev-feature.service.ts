@@ -21,4 +21,8 @@ export class DevFeatureService {
       return false;
     }
   }
+
+  public setCookieValue(value: string){
+    this.cookieService.set(FEATURES_COOKIE_KEY_NAME, value);
+  }
 }
