@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "no-ex-assign": "error",
+        "no-self-assign": "warn",
+        "no-unused-vars": ["warn", {"vars":  "all", "args":  "all"}],
+        "use-isnan": "error",
+        "valid-typeof": "error",
+        "camelcase": ["error",
+          {
+            "ignoreGlobals": true
+          }],
+        "eqeqeq": "error",
+        "dot-notation": "error",
+        "no-console": "error",
+        "no-magic-numbers": ["error", {"ignoreArrayIndexes":  true, "ignoreDefaultValues": true, "enforceConst":  true}],
+        "no-nested-ternary": "error",
+        "no-mixed-spaces-and-tabs": "error"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
