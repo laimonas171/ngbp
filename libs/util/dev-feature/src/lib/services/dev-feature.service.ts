@@ -22,7 +22,7 @@ export class DevFeatureService {
     }
   }
 
-  public setCookieValue(value: string){
+  public setCookieValue(value: string): void{
     this.cookieService.set(FEATURES_COOKIE_KEY_NAME, value);
   }
 }
