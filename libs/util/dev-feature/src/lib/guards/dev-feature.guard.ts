@@ -1,9 +1,8 @@
-import {Inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree,} from '@angular/router';
 import {Observable} from 'rxjs';
-import {DevFeature} from '../types';
+import {DevFeature, PAGE_NOT_FOUND_PATH} from '../types';
 import {DevFeatureService} from "../services/dev-feature.service";
-import {DOCUMENT} from "@angular/common";
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +11,6 @@ export class DevFeatureGuard implements CanActivate {
   constructor(
     private router: Router,
     private devFeatureService: DevFeatureService,
-    @Inject(DOCUMENT) private document: Document
   ) {
   }
 
@@ -28,7 +26,7 @@ export class DevFeatureGuard implements CanActivate {
     const devFeatureEnabled = this.devFeatureService.isEnabled(devFeature);
 
     if (!devFeatureEnabled) {
-      return this.router.parseUrl('/');
+      return this.router.parseUrl(PAGE_NOT_FOUND_PATH);
     }
 
     return true;

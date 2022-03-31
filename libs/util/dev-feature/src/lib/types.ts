@@ -7,3 +7,5 @@ export enum DevFeature {
 }
 
 export const FEATURES_COOKIE_KEY_NAME = 'enabled-dev-features';
+
+export const PAGE_NOT_FOUND_PATH = '/';
