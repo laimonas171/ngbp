@@ -13,7 +13,7 @@ export class AngularDevelopmentCookiesComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private devFeatureService: DevFeatureService) { }
 
   ngOnInit(): void {
-    this.setCookie = this.activatedRoute.snapshot.queryParamMap.get('set') ?? ''
+    this.setCookie = this.activatedRoute.snapshot.queryParams['set'] ?? '';
     this.devFeatureService.setCookieValue(this.setCookie);
   }
 
