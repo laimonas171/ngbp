@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { COOKIE_EXPIRE_DATE } from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class CookieService {
     return null;
   }
 
-  set(name: string, value: string, expiresDays: number = 14) {
+  set(name: string, value: string, expiresDays: number = COOKIE_EXPIRE_DATE) {
     let endDate: Date = new Date();
     endDate.setDate(endDate.getDate() + expiresDays);
 
