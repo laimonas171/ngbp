@@ -1,0 +1,27 @@
+<div class="container">
+  <h3>Feature Flag Mechanism Example</h3>
+  Example pages:
+  <nav>
+    <ul>
+      <li>
+        <a
+          [routerLink]="['../feature-flags']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Main</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['example-one']" routerLinkActive="active"
+          >Example One</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['example-two']" routerLinkActive="active"
+          >Example Two</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

@@ -1,1 +1,12 @@
-<ngbp-nx-welcome></ngbp-nx-welcome>
+<nav class="navigation">
+  <a
+    [routerLink]="['']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a [routerLink]="['feature-flags']" routerLinkActive="active"
+    >Feature Flags</a
+  >
+</nav>
+<router-outlet></router-outlet>

@@ -16,7 +16,12 @@
     "baseUrl": ".",
     "strictPropertyInitialization": true,
     "noImplicitAny": true,
-    "paths": {}
+    "paths": {
+      "@ngbp/example/feature-flags": [
+        "libs/example/feature-flags/src/index.ts"
+      ],
+      "@ngbp/util/dev-feature": ["libs/util/dev-feature/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

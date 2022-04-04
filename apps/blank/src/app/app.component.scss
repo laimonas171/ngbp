@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px 20px;
+}
+
+a {
+  padding: 8px 12px;
+  text-decoration: inherit;
+}
+
+.active {
+  background-color: #143157;
+  border-radius: 5%;
+  color: white;
+}
