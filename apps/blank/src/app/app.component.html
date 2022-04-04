@@ -1,6 +1,12 @@
 <nav class="navigation">
-  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-  <a [routerLink]="['example-one']" routerLinkActive="active">Example One</a>
-  <a [routerLink]="['example-two']" routerLinkActive="active">Example Two</a>
+  <a
+    [routerLink]="['']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a [routerLink]="['feature-flags']" routerLinkActive="active"
+    >Feature Flags</a
+  >
 </nav>
 <router-outlet></router-outlet>

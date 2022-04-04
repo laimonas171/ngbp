@@ -9,11 +9,17 @@ import { HasDevFeatureEnabledDirective } from './directives/has-dev-feature-enab
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: '', component: AngularDevelopmentCookiesComponent },
+      {
+        path: 'set',
+        component: AngularDevelopmentCookiesComponent,
+      },
     ]),
   ],
   providers: [DevFeatureService],
-  declarations: [AngularDevelopmentCookiesComponent, HasDevFeatureEnabledDirective],
+  declarations: [
+    AngularDevelopmentCookiesComponent,
+    HasDevFeatureEnabledDirective,
+  ],
   exports: [AngularDevelopmentCookiesComponent, HasDevFeatureEnabledDirective],
 })
 export class DevFeatureModule {}

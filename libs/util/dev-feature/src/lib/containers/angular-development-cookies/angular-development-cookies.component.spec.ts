@@ -13,7 +13,7 @@ const fakeDevFeatureService: Partial<DevFeatureService> = {
 let fakeActivatedRoute: Partial<ActivatedRoute> = {};
 fakeActivatedRoute.snapshot = {
   queryParams: {
-    set: featureValue,
+    features: featureValue,
   },
 } as unknown as ActivatedRouteSnapshot;
 

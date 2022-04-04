@@ -120,6 +120,32 @@
       "tags": [],
       "implicitDependencies": ["blank"]
     },
+    "example-feature-flags": {
+      "projectType": "library",
+      "root": "libs/example/feature-flags",
+      "sourceRoot": "libs/example/feature-flags/src",
+      "prefix": "ngbp",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/example/feature-flags"],
+          "options": {
+            "jestConfig": "libs/example/feature-flags/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/example/feature-flags/src/**/*.ts",
+              "libs/example/feature-flags/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "util-dev-feature": {
       "projectType": "library",
       "root": "libs/util/dev-feature",

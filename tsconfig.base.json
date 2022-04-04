@@ -17,6 +17,9 @@
     "strictPropertyInitialization": true,
     "noImplicitAny": true,
     "paths": {
+      "@ngbp/example/feature-flags": [
+        "libs/example/feature-flags/src/index.ts"
+      ],
       "@ngbp/util/dev-feature": ["libs/util/dev-feature/src/index.ts"]
     }
   },

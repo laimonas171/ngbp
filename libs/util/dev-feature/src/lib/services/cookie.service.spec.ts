@@ -27,7 +27,7 @@ describe('CookiesService', () => {
       expect(service.get(COOKIE_NAME)).toEqual(cookieValue);
     });
 
-    it("Should decode URI values", () => {
+    it("should decode URI values", () => {
       const cookieValue = "awesome-cookie%7camazing-cookie%7cbest-cookie";
       const expectedResults = "awesome-cookie|amazing-cookie|best-cookie";
 
@@ -44,14 +44,16 @@ describe('CookiesService', () => {
     it("Should set passed cookie with provided value", () => {
       const cookieValue = 'feature-test'
       service.set(COOKIE_NAME, cookieValue);
-      expect(document.cookie).toEqual(`${COOKIE_NAME}=${cookieValue}`)
+      expect(getCookieValueOnly(document.cookie)).toEqual(`${COOKIE_NAME}=${cookieValue}`)
     });
 
-    it("Should encode URI cookie value", () => {
+    it("should encode URI cookie value", () => {
       const cookieValue = 'feature-test|page-test'
       const expectedValue = 'feature-test%7Cpage-test'
       service.set(COOKIE_NAME, cookieValue);
-      expect(document.cookie).toEqual(`${COOKIE_NAME}=${expectedValue}`)
+      expect(getCookieValueOnly(document.cookie)).toEqual(`${COOKIE_NAME}=${expectedValue}`)
     });
   })
 });
+
+const getCookieValueOnly = (cookie: string): string => cookie.split(';')[0]
